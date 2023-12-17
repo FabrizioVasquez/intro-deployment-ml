@@ -17,7 +17,7 @@ jobs:
         SERVICE_ACCOUNT_KEY: ${{secrets.SERVICE_ACCOUNT_KEY}}
       steps:
           - name: Checkout Repo
-            uses: actions/checkout@v2
+            uses: actions/checkout@v3
           - id: 'auth'
             uses: 'google-github-actions/auth@v1'
             with: 
