@@ -24,9 +24,7 @@ data = pd.read_csv('dataset/full_data.csv')
 logger.info('Loading Model...')
 model = Pipeline([
     ('imputer',SimpleImputer(strategy='mean',missing_values=np.nan)),
-    ('core_model',GradientBoostingRegressor(learning_rate=0.15, loss='huber', max_depth=2,
-                          min_samples_leaf=3, min_samples_split=3,
-                          n_estimators=255))
+    ('core_model',GradientBoostingRegressor())
 ])
 
 logger.info('Separating dataset into train and test')
