@@ -4,7 +4,7 @@ from api.main import app
 
 client = TestClient(app=app)
 
-"""
+
 def test_null_prediction():
     response = client.post('/v1/prediction',json = {
   "opening_gross": 0,
@@ -19,7 +19,6 @@ def test_null_prediction():
 })
     assert response.status_code == 200
     assert response.json()['worldwide_gross'] == 0
-"""
 
 def test_random_prediction():
     response = client.post('/v1/prediction',json={
