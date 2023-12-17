@@ -4,7 +4,7 @@ from base64 import b64decode # usamos esto que vamos a usar el secret que estara
 def main():
     key = os.environ.get('SERVICE_ACCOUNT_KEY')
     with open ('path.json','w') as json_file:
-        json_file.write(b64decode(key.decode()))
+        json_file.write(b64decode(key).decode()) # Entonces aqui key es un string que se devuelve en bytes y luego decode a string
 
     print(os.path.realpath('path.json'))
 
