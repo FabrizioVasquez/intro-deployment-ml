@@ -18,8 +18,12 @@ jobs:
       steps:
           - name: Checkout Repo
             uses: actions/checkout@v3
+          - id: 'auth'
+            uses: 'google-github-actions/auth@v1'
+            with: 
+              credentials_json: '${{ secrets.SERVICE_ACCOUNT_KEY }}'
           - name: Set enviroment and bring the model
-            run:  |
+            run:  | 
               pip3 install virtualenv
               virtualenv venv
               source venv/bin/activate
